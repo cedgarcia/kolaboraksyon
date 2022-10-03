@@ -6,8 +6,7 @@
   "private": true,
   "main": "server/src/server.ts",
   "scripts": {
-    "server:dev": "set TS_NODE_PROJECT=./server/tsconfig.json&&ts-node-dev --respawn ./server/src/server.ts",
-    "client:dev": "next ./client"
+    "client:dev": "npm run dev --prefix client"
   },
   "dependencies": {
     "axios": "^0.27.2",
