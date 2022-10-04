@@ -1,5 +1,5 @@
 import Controller from './base.controller';
-// import ProjectModel from '../models/project.model';
+import Project from '../models/project.model';
 
 class ProjectController extends Controller {
   public path = 'projects';
@@ -13,7 +13,10 @@ class ProjectController extends Controller {
     // Verify the users authentication status
     this.verifyAuthentication();
 
-    this.router.route('/');
+    this.router
+      .route('/')
+      .get(this.getAll(Project))
+      .post(this.createOne(Project));
   }
 }
 
